@@ -1,9 +1,25 @@
-import Button from "./components/Button";
-import Header from "./components/Header";
-import AddPost from "./components/AddPost";
+import { useState, useEffect } from "react"
+import Posts from "./components/Posts"
+import Button from "./components/Button"
+import Header from "./components/Header"
+import AddPost from "./components/AddPost"
 
 function App() {
-  const url = "http://localhost:3000/posts";
+
+  const [posts, setPosts] = useState([])
+  const url = "http://localhost:3000/posts"
+
+  // Get Posts
+  useEffect(() => {
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      data.forEach(post => {
+        //console.log(post.title + " " + post.content)
+        setPosts(data)
+      })
+    })
+  })
 
   // Add Post
   const addPost = (post) => {
@@ -17,7 +33,11 @@ function App() {
       .then(response => response.json())
       .then(data => {
         console.log(data.message)
-      });
+      })
+  }
+
+  const deletePost = (id) => {
+    console.log("delete", id)
   }
 
   return (
@@ -31,26 +51,14 @@ function App() {
 
       <section>
         <h3>Alla inlägg</h3>
+
         <div>
-          <div>
-            <div>Inlägg 1</div>
-            <p>Lite text</p>
-            <span>Datum</span>
-            <Button color="blue" title="visa mer" />
-            <Button color="red" title="radera" />
-          </div>
-          <div>
-            <div>Inlägg 2</div>
-            <p>Lite text</p>
-            <span>Datum</span>
-            <Button color="blue" title="visa mer" />
-            <Button color="red" title="radera" />
-          </div>
+          <Posts posts={posts} onDelete={deletePost}/>
         </div>
       </section>
 
     </main>
-  );
+  )
 }
 
-export default App;
+export default App

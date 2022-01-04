@@ -4,14 +4,17 @@ const AddPost = (props) => {
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
 
+    // Prevent default submit
     const onSubmit = (e) => {
         e.preventDefault()
 
+        // Check if all fields are filled
         if(!title || !content){
             alert("Du måste fylla i alla fält.")
             return
         }
 
+        // Add post
         props.onAdd({title, content})
 
         setTitle("")
@@ -19,6 +22,7 @@ const AddPost = (props) => {
     }
 
     return (
+        // Add form
         <form onSubmit={onSubmit}>
             <label htmlFor="add-form-title">Titel</label>
             <input type="text" id="add-form-title" vlaue={title} onChange={(e) => setTitle(e.target.value)} />
