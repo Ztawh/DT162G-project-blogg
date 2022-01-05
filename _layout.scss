@@ -1,0 +1,60 @@
+
+
+body {
+    background-color: $background-body;
+    color: rgb(238, 238, 238);
+    font-family: 'Roboto Slab', serif;
+}
+
+header {
+    background: red;
+    text-align: center;
+    color: $background-main;
+    padding: 1rem;
+
+    
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    max-width: 600px;
+    margin: 0 auto;
+    background: $background-main;
+    padding: 1rem;
+    min-height: 100vh;
+}
+
+.btn {
+    padding: 0.5rem;
+    border: none;
+    
+}
+
+form {
+    input, textarea {
+        width: 100%;
+        padding: 0.5rem;
+        resize: none;
+    }
+
+    .submit-btn {
+        width: 150px;
+        margin: auto; // FUNKAR INTEEE
+    }
+}
+
+.post {
+    padding: 1rem;
+    background: $background-post;
+    margin-bottom: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 3rem 1rem;
+}

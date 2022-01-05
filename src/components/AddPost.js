@@ -30,7 +30,7 @@ const AddPost = (props) => {
             <label htmlFor="add-form-content">Text</label>
             <textarea name="add-form-content" id="add-form-content" cols="30" rows="10" value={content} onChange={(e) => setContent(e.target.value)}></textarea>
 
-            <input type="submit" vlaue="Spara" />
+            <input type="submit" value="Spara" className="submit-btn" />
 
         </form>
     )
