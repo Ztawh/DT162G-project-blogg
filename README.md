@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+# Projektarbete - blogg klientsida
+Detta arbete har gått ut på att skapa en webbapplikation som använder ett rest-api med express och node. På klientsidan ska ett javascript-ramverk användas, i detta projekt används React. 
+
+Nedan genereras lite information om React vid installation av React. 
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
