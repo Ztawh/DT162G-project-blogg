@@ -16,28 +16,34 @@ const EditPost = ({onSave, post}) => {
             return
         }
 
+        // Create object to send to editPost
         const obj = {"_id":id, "title": title, "content": content, "date": date}
 
         // Add post
-        // onSave({id, title, content})
         onSave({obj})
 
+        // Reset form
         setTitle("")
         setContent("")
     }
 
     return (
-        // Add form
+        <>
+        <h2 className="edit-h2">Redigera inlägg</h2>
+
+        {/* Edit form */}
         <form onSubmit={onSubmit}>
             <label htmlFor="add-form-title">Titel</label>
+            {/* Set value when user starts typing */}
             <input type="text" id="add-form-title" value={title} onChange={(e) => setTitle(e.target.value)} />
 
             <label htmlFor="add-form-content">Text</label>
+            {/* Set value when user starts typing */}
             <textarea name="add-form-content" id="add-form-content" cols="30" rows="10" value={content} onChange={(e) => setContent(e.target.value)}></textarea>
 
-            <input type="submit" vlaue="Spara" />
-
+            <input type="submit" value="Spara" className="submit-btn" />
         </form>
+        </>
     )
 }
 

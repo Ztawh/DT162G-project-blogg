@@ -14,25 +14,30 @@ const AddPost = (props) => {
             return
         }
 
-        // Add post
+        // Values to addPost
         props.onAdd({title, content})
 
+        // Reset form
         setTitle("")
         setContent("")
     }
 
     return (
-        // Add form
+        <>
+        <h2>Nytt inlägg</h2>
+        {/* Add form */}
         <form onSubmit={onSubmit}>
             <label htmlFor="add-form-title">Titel</label>
-            <input type="text" id="add-form-title" vlaue={title} onChange={(e) => setTitle(e.target.value)} />
+            {/* Set value when user starts typing */}
+            <input type="text" id="add-form-title" value={title} onChange={(e) => setTitle(e.target.value)} />
 
             <label htmlFor="add-form-content">Text</label>
+            {/* Set value when user starts typing */}
             <textarea name="add-form-content" id="add-form-content" cols="30" rows="10" value={content} onChange={(e) => setContent(e.target.value)}></textarea>
 
             <input type="submit" value="Spara" className="submit-btn" />
-
         </form>
+        </>
     )
 }
 

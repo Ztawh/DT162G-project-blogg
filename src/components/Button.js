@@ -1,7 +1,8 @@
 
 const Button = (props) => {
     return (
-        <button className="btn" style = {{backgroundColor: props.color}} onClick={props.onToggle}>{props.title}</button>
+        // Set color from color, toggle, class and title from props
+        <button className={props.class} style = {{backgroundColor: props.color}} onClick={props.onToggle}>{props.title}</button>
     )
 }
 

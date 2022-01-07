@@ -1,18 +1,15 @@
-
-
 body {
     background-color: $background-body;
-    color: rgb(238, 238, 238);
+    color: $text-color;
     font-family: 'Roboto Slab', serif;
+    position: relative;
 }
 
 header {
-    background: red;
+    background: $background-header;
     text-align: center;
     color: $background-main;
-    padding: 1rem;
-
-    
+    padding: 4rem 1rem;
 }
 
 // Headings
@@ -21,40 +18,203 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
 }
 
+h1 {
+    font-size: 3rem;
+
+    @include mobile {
+        // Smaller font on small devices  
+        font-size: 2.5rem;
+    }
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+.edit-h2 {
+    margin-top: 1rem;
+}
+
+.all-posts-h2 {
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+// Set max width to prevent long undreadable lines
 main {
     max-width: 600px;
     margin: 0 auto;
     background: $background-main;
-    padding: 1rem;
+    padding:  2rem 1rem 0.2rem 1rem;
     min-height: 100vh;
+    position: relative;
 }
 
+.flex {
+    display: flex;
+}
+
+// Edit form container. Make room for absolute position button
+.edit-container {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+// All buttons
 .btn {
     padding: 0.5rem;
     border: none;
-    
+    color: $text-btn-color;
+
+    @include desktop {
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
 
+// Add button top right corner
+.add-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+// Edit cancel button bottom left
+.edit-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+// Forms
 form {
+    width: 100%;
+    position: relative;
+    padding-bottom: 2.5rem;
     input, textarea {
         width: 100%;
         padding: 0.5rem;
         resize: none;
     }
 
+    label {
+        margin-top: 0.5rem;
+        display: block;
+    }
+    
+    // Form submit button bottom right corner
     .submit-btn {
         width: 150px;
-        margin: auto; // FUNKAR INTEEE
+        margin-left: auto;
+        background: $background-submit;
+        border: none;
+        color: white;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        @include desktop {
+            &:hover {
+                cursor: pointer;
+            }
+        }
     }
+}
+
+section {
+    margin-top: 2rem;
+}
+
+// Posts
+.posts-container {
+    position: relative;
 }
 
 .post {
     padding: 1rem;
     background: $background-post;
     margin-bottom: 1rem;
+    overflow-wrap: break-word; // Break long words
+
+    .btn-container {
+        margin-top: 1rem;
+    }
+
+    .btn-del {
+        margin-right: 0.5rem;
+    }
+
+    .date-link {
+        margin-top: 1rem;
+    }
+
+    // Read more link
+    a {
+        display: flex;
+        color: $link-color;
+        margin-left: auto;
+    }
 }
+
+.date-text {
+    color: $text-date-color;
+}
+
+// Single page
+.single-container {
+    padding: 1rem;
+    overflow-wrap: break-word; // Break long words
+
+    .single-flex {
+        flex-direction: column;
+    }
+
+    .date-text {
+        margin-left: auto;
+    }
+
+    // Go back link
+    a {
+        margin-top: 2rem;
+        display: flex;
+        color: $link-color;
+    }
+}
+
+// Footer
 
 footer {
     text-align: center;
     padding: 3rem 1rem;
+}
+
+// Confirm-box
+.confirm-box {
+    color: black;
+    position: fixed;
+    width: 300px;
+    top: 45%;
+    left: 45%;
+    padding: 2rem;
+
+    button {
+        padding: 0.5rem;
+        border: none;
+        background: $background-submit;
+        color: white;
+
+        @include desktop {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
 }

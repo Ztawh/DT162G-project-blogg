@@ -13,5 +13,28 @@
 
 // Variables
 $background-body: #131216;
-$background-main: #1e1e20;
+$background-main: linear-gradient(0deg, #1e1e20, #131216);
 $background-post: #323235;
+$background-submit: #09628b;
+$background-header: linear-gradient(0deg, #131216, #2e0700);
+$link-color: lighten(#09628b, 20);
+$text-color: rgb(218, 216, 216);
+$text-btn-color: rgb(218, 214, 214);
+$text-date-color: #b47c56;
+// $background-submit: #ad3700; // avbryt
+// $background-submit: #3e7004; // add
+
+// Mixins
+// Desktop
+@mixin desktop {
+    @media screen and (min-width: 900px){
+        @content;
+    }
+}
+
+// Mobile
+@mixin mobile {
+    @media screen and (max-width: 500px){
+        @content;
+    }
+}

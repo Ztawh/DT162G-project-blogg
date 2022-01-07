@@ -2,7 +2,7 @@
 const Header = () => {
     return (
         <header>
-            <h1>min header</h1>
+            <h1>amandas blogg</h1>
         </header>
     )
 }
