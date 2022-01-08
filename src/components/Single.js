@@ -5,7 +5,8 @@ const Single = () => {
     // Params get id from URL
     const { id } = useParams()
     const [post, setPost] = useState([]);
-    const url = "http://localhost:3000/posts"
+    //const url = "http://localhost:3000/posts"
+    const url = "https://whispering-everglades-05958.herokuapp.com/posts"
 
     const [day, setDate] = useState();
     const [month, setMonth] = useState();
@@ -19,6 +20,9 @@ const Single = () => {
             .then(response => response.json())
             .then(data => {
                 setPost(data)
+            })
+            .catch(error => {
+                console.log("Error: ", error)
             })
     }, [])
 

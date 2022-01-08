@@ -13,14 +13,18 @@ header {
 }
 
 // Headings
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0;
     font-family: 'Poppins', sans-serif;
 }
 
 h1 {
     font-size: 3rem;
-
     @include mobile {
         // Smaller font on small devices  
         font-size: 2.5rem;
@@ -52,7 +56,7 @@ main {
     max-width: 600px;
     margin: 0 auto;
     background: $background-main;
-    padding:  2rem 1rem 0.2rem 1rem;
+    padding: 2rem 1rem 0.2rem 1rem;
     min-height: 100vh;
     position: relative;
 }
@@ -72,7 +76,6 @@ main {
     padding: 0.5rem;
     border: none;
     color: $text-btn-color;
-
     @include desktop {
         &:hover {
             cursor: pointer;
@@ -99,17 +102,16 @@ form {
     width: 100%;
     position: relative;
     padding-bottom: 2.5rem;
-    input, textarea {
+    input,
+    textarea {
         width: 100%;
         padding: 0.5rem;
         resize: none;
     }
-
     label {
         margin-top: 0.5rem;
         display: block;
     }
-    
     // Form submit button bottom right corner
     .submit-btn {
         width: 150px;
@@ -120,7 +122,6 @@ form {
         position: absolute;
         bottom: 0;
         right: 0;
-
         @include desktop {
             &:hover {
                 cursor: pointer;
@@ -143,19 +144,15 @@ section {
     background: $background-post;
     margin-bottom: 1rem;
     overflow-wrap: break-word; // Break long words
-
     .btn-container {
         margin-top: 1rem;
     }
-
     .btn-del {
         margin-right: 0.5rem;
     }
-
     .date-link {
         margin-top: 1rem;
     }
-
     // Read more link
     a {
         display: flex;
@@ -172,15 +169,12 @@ section {
 .single-container {
     padding: 1rem;
     overflow-wrap: break-word; // Break long words
-
     .single-flex {
         flex-direction: column;
     }
-
     .date-text {
         margin-left: auto;
     }
-
     // Go back link
     a {
         margin-top: 2rem;
@@ -190,7 +184,6 @@ section {
 }
 
 // Footer
-
 footer {
     text-align: center;
     padding: 3rem 1rem;
@@ -198,19 +191,19 @@ footer {
 
 // Confirm-box
 .confirm-box {
-    color: black;
-    position: fixed;
-    width: 300px;
-    top: 45%;
-    left: 45%;
+    color: #000;
+    position: fixed !important;
+    left: 50%;
     padding: 2rem;
-
+    top: 50%;
+    width: 300px;
+    margin-left: -150px;
+    margin-top: -50px;
     button {
         padding: 0.5rem;
         border: none;
         background: $background-submit;
         color: white;
-
         @include desktop {
             &:hover {
                 cursor: pointer;

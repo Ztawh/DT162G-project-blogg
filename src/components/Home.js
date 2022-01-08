@@ -10,7 +10,8 @@ const Home = () => {
     const [showEditForm, setShowEditForm] = useState(false)
     let [posts, setPosts] = useState([])
     const [editingPost, setEditingPost] = useState([])
-    const url = "http://localhost:3000/posts"
+    // const url = "http://localhost:3000/posts"
+    const url = "https://whispering-everglades-05958.herokuapp.com/posts"
 
     // Get posts on page load
     useEffect(() => {
@@ -18,6 +19,9 @@ const Home = () => {
             .then(response => response.json())
             .then(data => {
                 setPosts(data)
+            })
+            .catch(error => {
+                console.log("Error: ", error)
             })
     }, [])
 
@@ -27,6 +31,9 @@ const Home = () => {
             .then(response => response.json())
             .then(data => {
                 setPosts(data)
+            })
+            .catch(error => {
+                console.log("Error: ", error)
             })
     }
 
@@ -47,6 +54,9 @@ const Home = () => {
                 // Hide add form
                 toggleForm()
             })
+            .catch(error => {
+                console.log("Error: ", error)
+            })
     }
 
     // Delete post
@@ -66,6 +76,9 @@ const Home = () => {
                     getPosts()
                     // Update state posts
                     setPosts([...posts])
+                })
+                .catch(error => {
+                    console.log("Error: ", error)
                 })
         } else {
             return
@@ -93,6 +106,9 @@ const Home = () => {
             .then(data => {
                 // Get posts again
                 getPosts()
+            })
+            .catch(error => {
+                console.log("Error: ", error)
             })
 
         // Hide edit form

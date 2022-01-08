@@ -21,7 +21,12 @@ header {
   padding: 4rem 1rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
@@ -101,7 +106,8 @@ form {
   position: relative;
   padding-bottom: 2.5rem;
 }
-form input, form textarea {
+form input,
+form textarea {
   width: 100%;
   padding: 0.5rem;
   resize: none;
@@ -181,12 +187,14 @@ footer {
 }
 
 .confirm-box {
-  color: black;
-  position: fixed;
-  width: 300px;
-  top: 45%;
-  left: 45%;
+  color: #000;
+  position: fixed !important;
+  left: 50%;
   padding: 2rem;
+  top: 50%;
+  width: 300px;
+  margin-left: -150px;
+  margin-top: -50px;
 }
 .confirm-box button {
   padding: 0.5rem;
