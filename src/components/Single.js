@@ -4,13 +4,13 @@ import { useEffect, useState } from "react"
 const Single = () => {
     // Params get id from URL
     const { id } = useParams()
-    const [post, setPost] = useState([]);
+    const [post, setPost] = useState([])
     //const url = "http://localhost:3000/posts"
     const url = "https://whispering-everglades-05958.herokuapp.com/posts"
 
-    const [day, setDate] = useState();
-    const [month, setMonth] = useState();
-    const [year, setYear] = useState();
+    const [day, setDate] = useState()
+    const [month, setMonth] = useState()
+    const [year, setYear] = useState()
 
     const months = ["januari", "februari", "mars", "april", "maj", "juni", "juli", "augusti", "september", "oktober", "november", "december"]
 

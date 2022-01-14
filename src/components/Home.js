@@ -123,7 +123,11 @@ const Home = () => {
     return (
         <>
             {/* Print add button. If add form is visible, button is red and says "avbryt", else it's blue and it says "Nytt inlägg"*/}
-            <Button class="add-btn btn" color={showAddForm ? "#ad3700" : "#09628b"} title={showAddForm ? "Avbryt" : "Nytt inlägg"} onToggle={toggleForm} />
+            <Button 
+            class="add-btn btn" 
+            color={showAddForm ? "#ad3700" : "#09628b"} 
+            title={showAddForm ? "Avbryt" : "Nytt inlägg"} 
+            onToggle={toggleForm} />
 
             {/* If showAddFrom is true, show form */}
             {showAddForm ? <div><AddPost onAdd={addPost} /></div> : false}
